@@ -1,0 +1,12 @@
+<h1 class="text-center">Routing Concepts</h1>
+<h1>{{userMessage}}</h1>
+<ul>
+    <li *ngFor="let topic of topics">
+        {{topic}}
+    </li>
+</ul>
+
+<input type="text" [(ngModel)]="searchText">
+<div *ngFor="let user of testData | filter:searchText">
+    {{user.name}}
+</div>

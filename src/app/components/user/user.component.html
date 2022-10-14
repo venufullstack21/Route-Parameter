@@ -1,0 +1,36 @@
+<h1 class="text-center">Users Data</h1>
+
+<div *ngIf="userData else errormessage">
+    <div>
+        <table class="table table-boardered">
+            <tr>
+                <th>Name</th>
+                <td>{{userData.name}}</td>
+            </tr>
+            <tr>
+                <th>User Name</th>
+                <td>{{userData.username}}</td>
+            </tr>
+            <tr>
+                <th>E-Mail</th>
+                <td>{{userData.email}}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{userData.address.city}}</td>
+            </tr>
+        </table>
+    </div>  
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="address">Address</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="company">Company</a>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
+</div>
+<ng-template #errormessage>
+    <p class="alert alert-danger text-center">{{errorMessage}}</p>
+</ng-template>

@@ -1,0 +1,27 @@
+<h1 class="text-center">Users Dashboard</h1>
+<input type="submit" class="btn btn-primary" routerLink="adduser" value="Add User">
+<div *ngIf="users?.length > 0 else errormessage">
+    <table class="table table-boardered">
+        <tr class="bg-primary">
+            <th>ID</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>E-Mail</th>
+            <th>City</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td><a [routerLink]="['/user',user.id]">{{user.id}}</a></td>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address.city}}</td>
+        </tr>
+    </table>
+</div>
+<ng-template #errormessage>
+    <p class="alert alert-danger text-center">{{errorMessage}}</p>
+</ng-template>
+
+<!-- <pre>
+{{users|json}}
+</pre> -->
