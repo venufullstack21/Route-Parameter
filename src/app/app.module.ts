@@ -21,7 +21,6 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { UnSavedChangesGuard } from './guards/un-saved-changes.guard';
 import { ResolveGuardExComponent } from './components/resolve-guard-ex/resolve-guard-ex.component';
 import { ResolveGuard } from './guards/resolve.guard';
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ObservableExComponent } from './observable-ex/observable-ex.component'
 import { NotificationService } from './services/notification.service';
@@ -54,7 +53,6 @@ import { NotificationdashboardComponent } from './components/notificationdashboa
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
   ],
   // Guards
   providers: [AuthGuard,AdminGuard,UnSavedChangesGuard,ResolveGuard,NotificationService],
